@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carte de Vœux Travian</title>
+    <style>
+                body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            overflow: hidden;
+        }
+
+        .card {
+            position: relative;
+            width: 600px;
+            height: 750px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .card h1 {
+            margin: 10px 0;
+            font-size: 2em;
+            color: #FF6347;
+        }
+
+        .card p {
+            font-size: 1.2em;
+            color: #555;
+            margin: 10px;
+        }
+
+        .card .image-container {
+            display: flex;             /* Active le mode Flexbox */
+            flex-direction: column;    /* Aligne les enfants verticalement */
+            align-items: center;       /* Centre les images horizontalement */
+        }
+
+        .card img {
+            width: 300px;              /* Largeur des images */
+            height: auto;              /* Maintient les proportions */
+            margin: 10px 0;            /* Espacement vertical */
+            border-radius: 10px;       /* Coins arrondis */
+        }
+
+        .card button {
+            display: block;            /* Force le bouton à occuper toute la largeur disponible */
+            margin: 10px auto;         /* Centre horizontalement avec auto */
+            padding: 10px 20px;        /* Espacement interne */
+            font-size: 1em;            /* Taille du texte */
+            color: white;              /* Couleur du texte */
+            background: #FF6347;       /* Couleur de fond */
+            border: none;              /* Supprime les bordures */
+            border-radius: 5px;        /* Coins arrondis */
+            cursor: pointer;           /* Curseur en main */
+            transition: background 0.3s; /* Animation sur le changement de couleur */
+        }
+
+        .card button:hover {
+            background: #e5533a;
+        }
+
+        /* Animation festive */
+        .snowflake {
+            position: absolute;
+            top: -50px;
+            font-size: 1.5em;
+            color: white;
+            opacity: 0.8;
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+            from {
+                transform: translateY(-50px);
+            }
+            to {
+                transform: translateY(110vh);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>Joyeuses Fêtes ami de Travian ! 🎉</h1>
+        <p>Conquérez l'année à venir avec nous a vos cotés pour vos defendre et vos succès !</p>
+
+        <!-- Ajouter des images Travian -->
+        <img src="https://www.travian.com/cms/static/2020-07/_0002_dorf2Gaul.png.png" alt="notre village">
+        <img src="https://www.travian.com/cms/static/2020-06/HorseDrinking.png" alt="ton abrevoir">
+        <img src="https://www.travian.com/cms/static/2020-10/Gauls.png" alt="Nos soldats">
+
+        <button onclick="showMessage()">Cliquez ici pour une surprise 🎁</button>
+    </div>
+
+    <!-- Animation de flocons -->
+    <script>
+        // Générer des flocons de neige
+        for (let i = 0; i < 50; i++) {
+            const snowflake = document.createElement('div');
+            snowflake.className = 'snowflake';
+            snowflake.innerHTML = '❄️';
+            snowflake.style.left = Math.random() * 100 + 'vw';
+            snowflake.style.animationDuration = Math.random() * 3 + 2 + 's';
+            document.body.appendChild(snowflake);
+        }
+
+        // Message surprise
+        function showMessage() {
+            alert("Merci de demander notre aide pour vous defendre  ! 🌟 Bon jeu et joyeuses fêtes !");
+        }
+    </script>
+</body>
+</html>
